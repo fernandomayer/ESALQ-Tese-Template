@@ -1,6 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Template para redação de Teses/Dissertações da ESALQ/USP
 % Autor: Antonio Augusto Franco Garcia
+% Conversão para Rnw: Fernando de Pol Mayer
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Este arquivo concatena todos os arquivos individuais e o template
