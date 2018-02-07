@@ -1,0 +1,151 @@
+% Espaçamento: 1.5
+\OnehalfSpacing*
+\setSingleSpace{1.0} %Mantém espaço único nas legendas de Tabs e Figuras
+
+% Aplicando as modificações
+\checkandfixthelayout
+
+% Definindo página A4 no pdf, com margens corretas
+\usepackage[a4paper,twoside,top=3cm,bottom=2cm,left=3cm,right=2cm]{geometry}
+
+% Indentação na primeira linha dos parágrafos
+\setlength{\parindent}{1.5cm}
+% Fazer isso também nos parágrafos que iniciam capítulos
+\usepackage{indentfirst}
+
+% Fontes 
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+% Caso pretenda usar fontes do sistema, remova os comentários das
+% linhas abaixo, e indique o nome das fontes desejadas.
+% OBS: o arquivo só irá compilar se as fontes estiverem instaladas!
+%\defaultfontfeatures{Mapping=tex-text}
+%\setromanfont{GaramondNo8} % versão livre da Garamond
+%\setsansfont{Calibri}
+%\setmonofont{Inconsolata}
+
+
+% Hyperlinks
+\usepackage{url}
+
+% Hifenação e acentuação
+\usepackage[english, brazil]{babel}
+
+% Macro para remover Heads, que estão presentes por default na classe memoir
+\nouppercaseheads %for the heads
+\copypagestyle{fnsizeheadings}{headings} % Fonte diferente nos cabeçalhos
+\makeevenhead{fnsizeheadings}{\thepage}{}{}
+\makeoddhead{fnsizeheadings}{}{}{\thepage}
+
+% Macro para fazer a numeração da primeira página dos capítulos ficar
+% no cabeçalho, à direita
+\copypagestyle{chapter}{plain} % Usar estilo específico para chapter
+\makeevenfoot{chapter}{}{}{}
+\makeoddfoot{chapter}{}{}{}
+\makeevenhead{chapter}{\thepage}{}{}
+\makeoddhead{chapter}{}{}{\thepage}
+
+% Mantendo o estilo dos cabeçalhos nas páginas em branco (serão numeradas)
+\aliaspagestyle{cleared}{pagestyle}
+
+%% Estilo da fonte do título dos capítulos e seções
+\chapterstyle{article}
+\setsecheadstyle{\bfseries \sffamily} %Estilo das Seções
+\setsubsecheadstyle{\bfseries \sffamily} % Estilo das Subseções
+\setsubsubsecheadstyle{\bfseries \sffamily} % Estilo das Subsubseções
+
+% Fonte dos títulos dos Capítulos
+\renewcommand*{\chaptitlefont}{\bfseries \sffamily \large}
+\renewcommand{\printchaptertitle}[1]{\chaptitlefont\MakeUppercase{#1}}
+\renewcommand*{\chapnumfont}{\bfseries \sffamily \large}
+
+% Para incluir números até subseção. Mais do que isso é exagero!
+\setsecnumdepth{subsubsection}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% TOC (bastante complicado!)
+%%%% Short/long ToC
+\makeatletter
+\newcommand*{\setupshorttoc}{%
+  \renewcommand*{\contentsname}{\hspace{7cm}Sumário}
+  \let\oldchangetocdepth\changetocdepth
+  \let\oldprecistoctext\precistoctext
+  \renewcommand{\precistoctext}[1]{}
+  \let\oldcftchapterfillnum\cftchapterfillnum
+  \renewcommand*{\changetocdepth}[1]{}
+  \setcounter{tocdepth}{0}% chapters
+  \renewcommand*{\cftchapterfont}{\hfill\sffamily}
+  \renewcommand*{\cftchapterpagefont}{\sffamily}
+  \renewcommand*{\cftchapterleader}{ \textperiodcentered\space}
+  \renewcommand*{\cftchapterafterpnum}{\cftparfillskip}
+  \renewcommand*{\cftchapterfillnum}[1]{%
+    {\cftchapterleader}\nobreak
+    \hbox to 1.5em{\cftchapterpagefont ##1\hfil}\cftchapterafterpnum\par}
+  \setrmarg{0.3\textwidth}
+  \setlength{\unitlength}{\@tocrmarg}
+  \addtolength{\unitlength}{1.5em}
+  \let\oldcftpartformatpnum\cftpartformatpnum
+  \renewcommand*{\cftpartformatpnum}[1]{%
+    \hbox to\unitlength{{\cftpartpagefont ##1}}}
+  \let\oldcftbookformatpnum\cftbookformatpnum
+  \renewcommand*{\cftbookformatpnum}[1]{%
+    \hbox to\unitlength{{\cftbookpagefont ##1}}}}
+
+\newcommand*{\setupparasubsecs}{%
+  \let\oldnumberline\numberline
+  \renewcommand*{\cftsubsectionfont}{\sffamily}
+  \renewcommand*{\cftsubsectionpagefont}{\sffamily}
+  \renewcommand*{\cftsubsubsectionpagefont}{\sffamily}
+  \renewcommand*{\cftsubsubsectionfont}{\sffamily}
+  \renewcommand*{\cftsectionfont}{\sffamily}
+  \renewcommand*{\cftsectionpagefont}{\sffamily}
+ }
+
+\AtEndDocument{\addtocontents{toc}{\par}}
+
+% TOC Principal
+\newcommand*{\setupmaintoc}{%
+  \renewcommand{\contentsname}{\hspace{7.5cm}Sumário}
+  \let\changetocdepth\oldchangetocdepth
+  \let\precistoctext\oldprecistoctext
+  \let\cftchapterfillnum\oldcftchapterfillnum
+  \addtodef{\cftchapterbreak}{\par}{}
+  \renewcommand*{\cftchapterfont}{\normalfont\sffamily}
+  \renewcommand*{\cftchapterleader}{\sffamily\cftdotfill{\cftchapterdotsep}}
+  \renewcommand*{\cftchapterafterpnum}{}
+  \renewcommand{\cftchapterbreak}{\par\addpenalty{-\@highpenalty}}
+  \setpnumwidth{2.55em}
+  \setrmarg{3.55em}
+  \setcounter{tocdepth}{3} %No TOC, só entra até subsubsection
+  \let\cftpartformatpnum\oldcftpartformatpnum
+  \addtodef{\cftpartbreak}{\par}{}
+  \let\cftbookformatpnum\oldcftbookformatpnum
+  \addtodef{\cftbookbreak}{\par}{}
+}
+
+\renewcommand{\cftchapterdotsep}{\cftdotsep}% Colocar pontos nos
+                                % capítulos, no Toc
+
+% Para centralizar os títulos das Listas de Figuras e Tabelas
+\renewcommand{\printlottitle}[1]{\centering\bfseries\sffamily \MakeUppercase{#1}}
+\renewcommand{\printloftitle}[1]{\centering\bfseries\sffamily \MakeUppercase{#1}}
+
+% Formato das legendas de Figuras e Tabelas
+\captiondelim{. }
+\captionnamefont{\bfseries}
+
+% Inclusão de referências bibliográficas usando o BibTex
+\usepackage{natbib}
+
+%% Para remover a inclusão automática da palavra "Resumo" ou
+%% "Abstract" 
+\addto\captionsbrazil{\renewcommand*\abstractname{}}
+
+%%% Espaço entre itens no Sumário
+\setlength{\cftbeforebookskip}{0em \@plus\p@}
+\setlength{\cftbeforepartskip}{0em \@plus\p@}
+\setlength{\cftbeforechapterskip}{0.1em \@plus\p@}
+
+
+\makeatother
