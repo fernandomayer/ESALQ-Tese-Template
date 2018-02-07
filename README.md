@@ -251,10 +251,7 @@ principal.
 
 Referências:
 
-https://stackoverflow.com/questions/22716088/working-with-rstudio-for-writing-thesis-chapters-in-rnw
-
-https://yihui.name/knitr/demo/child/
-
-https://yihui.name/knitr/demo/externalization/
-
-https://yihui.name/knitr/options/#package-options
+- https://stackoverflow.com/questions/22716088/working-with-rstudio-for-writing-thesis-chapters-in-rnw
+- https://yihui.name/knitr/demo/child/
+- https://yihui.name/knitr/demo/externalization/
+- https://yihui.name/knitr/options/#package-options
