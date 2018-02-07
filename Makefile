@@ -1,4 +1,19 @@
-Tese.pdf: Tese.tex referencias/bibliografia.bib template/Template_Tese.sty pre-textual/TodasInformações.tex pre-textual/Agradecimentos.tex pre-textual/Biografia.tex pre-textual/Dedicatoria.tex pre-textual/Epigrafe.tex pre-textual/ListaAbreviaturas.tex pre-textual/ListaSimbolos.tex pre-textual/Resumo.tex textual/Introdução.tex textual/MatMet.tex textual/Resultados.tex textual/Discussão.tex pos-textual/Anexos.tex pos-textual/Apêndices.tex
+# Tese.pdf: Tese.Rnw \
+# 	referencias/bibliografia.bib template/Template_Tese.sty \
+# 	pre-textual/TodasInformações.Rnw pre-textual/Agradecimentos.Rnw \
+# 	pre-textual/Biografia.Rnw pre-textual/Dedicatoria.Rnw \
+# 	pre-textual/Epigrafe.Rnw pre-textual/ListaAbreviaturas.Rnw \
+# 	pre-textual/ListaSimbolos.Rnw pre-textual/Resumo.Rnw \
+# 	textual/Introdução.Rnw textual/MatMet.Rnw textual/Resultados.Rnw \
+# 	textual/Discussão.Rnw \
+# 	pos-textual/Anexos.Rnw pos-textual/Apêndices.Rnw
+Tese.pdf: Tese.Rnw \
+	referencias/bibliografia.bib template/Template_Tese.sty \
+	pre-textual/*.Rnw \
+	textual/*.Rnw \
+	pos-textual/*.Rnw
+
+	Rscript -e 'knitr::knit("Tese.Rnw")'
 	xelatex Tese.tex
 	# O sinal de "menos" é para ignorar erros e prosseguir
 	# Eles não são importantes no caso do bibtex
