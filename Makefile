@@ -1,12 +1,3 @@
-# Tese.pdf: Tese.Rnw \
-# 	referencias/bibliografia.bib template/Template_Tese.sty \
-# 	pre-textual/TodasInformações.Rnw pre-textual/Agradecimentos.Rnw \
-# 	pre-textual/Biografia.Rnw pre-textual/Dedicatoria.Rnw \
-# 	pre-textual/Epigrafe.Rnw pre-textual/ListaAbreviaturas.Rnw \
-# 	pre-textual/ListaSimbolos.Rnw pre-textual/Resumo.Rnw \
-# 	textual/Introdução.Rnw textual/MatMet.Rnw textual/Resultados.Rnw \
-# 	textual/Discussão.Rnw \
-# 	pos-textual/Anexos.Rnw pos-textual/Apêndices.Rnw
 Tese.pdf: Tese.Rnw \
 	referencias/bibliografia.bib template/Template_Tese.sty \
 	pre-textual/*.Rnw \
