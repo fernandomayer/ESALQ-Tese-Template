@@ -1,0 +1,9 @@
+%%% Esta parte não deve ser alterada
+\chapter*{\hspace{7.25cm}{DEDICATÓRIA}}
+
+
+%%% Altere a partir daqui.
+
+Fulano, importante na minha vida.
+
+

@@ -1,0 +1,20 @@
+%% Não altere aqui
+\chapter*{\hspace{7.5cm}{EPÍGRAFE}}
+
+
+
+% Insira aqui o que desejar. A formatação é livre.
+
+\begin{verse}
+E, se bem que seja obscuro\\
+Tudo pela estrada fora,\\
+E falso, ele vem seguro,\\
+E, vencendo estrada e muro,\\
+Chega onde em sono ela mora.\\
+E, inda tonto do que houvera,\\
+A cabeça, em maresia,\\
+Ergue a mão, e encontra hera,\\
+E vê que ele mesmo era A Princesa que dormia.
+\end{verse}
+
+\textit{Fernando Pessoa}

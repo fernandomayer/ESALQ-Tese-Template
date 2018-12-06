@@ -1,0 +1,17 @@
+% Não altere aqui
+\chapter*{\hspace{4.8cm}{LISTA DE ABREVIATURAS E SIGLAS}}
+\addcontentsline{toc}{chapter}{Lista de Abreviaturas e Siglas}
+
+
+% Preencha abaixo. É uma simples tabela.
+\begin{table*}[h]
+\begin{tabular}{  l  l } 
+ISO	&	International Standard Organization\\
+Mm	&	milímetro\\
+MV/s	&	milivolts por segundo\\
+RPM	&	rotações por minute
+\end{tabular}
+\end{table*}
+
+
+

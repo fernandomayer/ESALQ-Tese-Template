@@ -1,0 +1,128 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% NÃO HÁ NADA A SER ALTERADO AQUI!!!!
+%% Feche o arquivo para evitar problemas
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\thispagestyle{empty}
+
+%%%%%%%%%%
+% Capa 1
+
+\begin{center}
+  { \fontsize{14}{14} \sffamily \bfseries
+    Universidade de São Paulo\\
+    Escola Superior de Agricultura “Luiz de Queiroz”\\
+    \CENA
+  }
+\end{center}
+
+
+\vfill % Joga o cabeçalho no topo da página
+
+% Título
+\vspace{10pt}
+\begin{center}
+  \begin{center}
+    { \fontsize{14}{14} \sffamily \bfseries
+      \TítuloDoTrabalho
+    }
+  \end{center}
+
+% Autor
+  \vspace{60pt}
+  \begin{center}
+    { \fontsize{14}{14} \sffamily \bfseries
+      \Autor
+    }
+  \end{center}
+
+  
+% Título obtido
+  \vspace{20pt}
+  \begin{flushright}
+    \begin{minipage}{0.5\textwidth}
+      { \fontsize{10}{10} \sffamily
+        \TítuloObtido
+      }
+    \end{minipage}
+  \end{flushright}
+  
+  \vfill
+
+% Parte de baixo da página
+  \begin{center}
+    { \fontsize{14}{14} \sffamily \bfseries
+      Piracicaba\\
+      \AnoDepósito
+    }
+  \end{center}
+  
+\end{center} 
+
+%%%%%%%%%
+% Página em branco, sem numeração
+\newpage
+\thispagestyle{empty}
+\phantom{ôlas}
+
+
+%%%%%%%%%%
+% Página de rosto, com orientador
+\cleardoublepage
+\pagenumbering{arabic}  % reinicia a numeração de página
+\thispagestyle{empty} % Não mostra o número na Página de Rosto
+
+\begin{center}
+  { \fontsize{14}{14} \sffamily \bfseries
+    \Autor\\
+    \TituloDaGraduação
+  }
+\end{center}
+
+\vfill % Joga o cabeçalho no topo da página
+
+% Título
+\vspace{10pt}
+\begin{center}
+  \begin{center}
+    { \fontsize{14}{14} \sffamily \bfseries
+      \TítuloDoTrabalho
+    }\\
+    {\small\sffamily{\Revisada}}
+  \end{center}
+
+% Orientador
+  \vspace{60pt}
+  \begin{flushright}
+    \begin{minipage}{0.5\textwidth}
+      { \fontsize{10}{10} \sffamily
+        Orientador:\\
+        \DoutorOuDoutora\:
+        \textbf{\MakeUppercase{\Orientador}}
+      }
+    \end{minipage}
+  \end{flushright}
+
+% Título obtido
+  \vspace{20pt}
+  \begin{flushright}
+    \begin{minipage}{0.5\textwidth}
+      { \fontsize{10}{10} \sffamily
+        \TítuloObtido
+      }
+    \end{minipage}
+  \end{flushright}
+
+  \vfill
+
+% Parte de baixo da página
+  \begin{center}
+    { \fontsize{14}{14} \sffamily \bfseries
+      Piracicaba\\
+      \AnoDepósito
+    }
+  \end{center}
+
+\end{center} 
+
+\newpage
