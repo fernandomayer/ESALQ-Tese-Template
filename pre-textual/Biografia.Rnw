@@ -1,8 +1,0 @@
-%% Não altere esta parte
-\chapter*{\hspace{7.35cm}{BIOGRAFIA}}
-
-
-
-%% Informe aqui sua biografia
-
-Eu nasci há dez mil anos atrás.
