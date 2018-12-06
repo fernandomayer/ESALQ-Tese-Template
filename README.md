@@ -7,7 +7,7 @@ ESALQ, escrito originalmente pelo professor Antonio Augusto Franco
 Garcia, e disponibilizado no site da [Biblioteca da
 ESALQ](http://www4.esalq.usp.br/biblioteca/apoio-a-producao-academica).
 
-As alterações feitas aqui são para possibiliar que a tese seja escrita
+As alterações feitas aqui são para possibilitar que a tese seja escrita
 usando o formato `Rnw`, do pacote **knitr** para o R. Dessa forma,
 pode-se misturar códigos R ao texto escrito em LaTeX. Para informações
 gerais sobre o **knitr**, veja este [site](https://yihui.name/knitr).
@@ -38,7 +38,7 @@ mencionar apenas as diferenças principais.
 
 Antes de fazer qualquer modificação nos arquivos, a primeira coisa a
 fazer é compilar este template para ver se está funcionando corretamente
-no seu sistema. Para isso, abra uma sessão do R (na raíz deste
+no seu sistema. Para isso, abra uma sessão do R (na raiz deste
 diretório), e execute os comandos:
 
 ```{r}
@@ -46,7 +46,7 @@ library(knitr)
 knit("Tese.Rnw")
 ```
 
-Isso irá gerar um arquivo `Tese.tex`. Compile esse aqruivo `tex` no seu
+Isso irá gerar um arquivo `Tese.tex`. Compile esse arquivo `tex` no seu
 editor de preferência ou via terminal, usando o `xelatex`. Por
 exemplo, no terminal:
 
@@ -84,17 +84,17 @@ não tenha nenhum código R, não altere o formato do arquivo para `tex`.
 Após alguma edição, basta compilar **apenas** o arquivo `Tese.Rnw`
 conforme mencionado acima (não esqueça de rodar o `knit()` antes).
 
-Para inserir códigos R no meio do texto, basta abrir os *chuncks* e
+Para inserir códigos R no meio do texto, basta abrir os *chunks* e
 inserir os comandos conforme qualquer outro documento do **knitr**. Isso
 é particularmente útil para gerar as figuras e tabelas que vão no meio
 do texto. Fazendo isso e compilando o arquivo `Tese.Rnw` já é o
-suficiente para executar os códigos do R que estiberem em qualquer
+suficiente para executar os códigos do R que estiverem em qualquer
 arquivo desse template.
 
 O arquivo `setup_knitr.R` contém algumas definições globais para
-chuncks, e pode ser alterado conforme necessidades especificas.
+chunks, e pode ser alterado conforme necessidades especificas.
 
-Uma alternativa mais viável para misturar chuncks do R em textos longos
+Uma alternativa mais viável para misturar chunks do R em textos longos
 (como o de uma tese) é usar o conceito de [code
 externalization](https://yihui.name/knitr/demo/externalization/) do
 **knitr**. Pense que à medida que for escrevendo a tese e fazendo suas
@@ -148,7 +148,7 @@ terá que dar nome para todos os chunks). O formato é o seguinte:
 
 Esse formato, com 2 `#` e 4 `-` é obrigatório. Somente dessa forma que a
 função `read_chunk()` utilizada acima será capaz de importar os códigos
-que estiverem abaixo desse comantário especial.
+que estiverem abaixo desse comentário especial.
 
 Por exemplo, depois de importar e explorar os dados você deseja inserir
 uma figura no arquivo `Resultado.Rnw`. Para isso, bastaria fazer no
@@ -233,7 +233,7 @@ agora são para cada capítulo, por exemplo
 ao invés de cada seção da tese, como no formato tradicional.
 
 O uso do pacote do R **knitr**, dos chunks de código no meio do texto ou
-do *code externalization* são exatemente iguais ao já descrito para o
+do *code externalization* são exatamente iguais ao já descrito para o
 template de tese no formato tradicional.
 
 ## Alterações feitas para converter os arquivos para o formato knitr:
@@ -303,7 +303,7 @@ possível usar as opções de chunk normalmente.
 - No Makefile os arquivos do `target` (arquivo `Tese.pdf`) foram
 alterados para `Rnw`, e foi utilizado *wildcards* para indicar que todos
 os arquivos das subpastas devem ser utilizados (ao invés de escrever um
-a um). Também foi incluido uma chamada para rodar o knitr no arquivo
+a um). Também foi incluído uma chamada para rodar o knitr no arquivo
 principal.
 
 Referências:
