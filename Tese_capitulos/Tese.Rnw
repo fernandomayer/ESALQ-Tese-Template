@@ -197,6 +197,9 @@ knitr::opts_knit$set(latex.options.color = "usenames,dvipsnames")
 <<child-cap2, child='textual/Capitulo2.Rnw'>>=
 @
 
+<<child-consid, child='textual/Consideracoes.Rnw'>>=
+@
+
 % Referências.
 % O template faz uso do BibTex. Verifique o formato
 % apropriado para o seu caso. Abaixo, é apresentado um exemplo para o

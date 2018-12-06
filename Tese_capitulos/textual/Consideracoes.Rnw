@@ -1,0 +1,14 @@
+% \begin{btUnit}
+\chapter{Considerações finais}
+
+Escrever considerações finais gerais sobre todos os capítulos.
+Normalmente não serão utilizadas referências aqui, mas caso seja
+necessário, basta descomentar os códigos acima e abaixo.
+
+% \begin{btSect}[referencias/apalikept]{referencias/bibliografia}
+% \section*{Referências}
+% \addcontentsline{toc}{section}{Referências}
+% \btPrintCited
+% \end{btSect}
+
+% \end{btUnit}
