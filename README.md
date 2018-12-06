@@ -16,7 +16,19 @@ Todos os arquivos disponibilizados no formato `tex` foram convertidos
 para o formato `Rnw`, portanto aqui são esses arquivos que devem ser
 editados (mesmo que nenhum código R seja utilizado em algum arquivo).
 
-## Como usar
+O template com os arquivos em `Rnw` também foi modificado para o formato
+de tese em capítulos. Esse formato também é permitido pela biblioteca,
+e, deve conter uma introdução geral e considerações finais sobre todos
+os capítulos. Dessa forma, cada capítulo deve ser auto-contido, ou seja,
+deve conter seu próprio resumo, introdução, etc, e deve ser independente
+dos outros capítulos. Além disso, as referências bibliográficas devem
+ser colocadas ao final de cada capítulo.
+
+Mesmo que você opte por usar a tese no formato de capítulos, recomendo
+que leia antes as instruções de uso do template da tese no formato
+tradicional.
+
+## Tese no formato tradicional
 
 As instruções para a versão original em LaTeX estão
 [aqui](http://www.esalq.usp.br/biblioteca/tutorial-template-latex.pdf),
@@ -79,9 +91,8 @@ do texto. Fazendo isso e compilando o arquivo `Tese.Rnw` já é o
 suficiente para executar os códigos do R que estiberem em qualquer
 arquivo desse template.
 
-O arquivo [setup_knitr.R](setup_knitr.R) contém algumas definições
-globais para chuncks, e pode ser alterado conforme necessidades
-especificas.
+O arquivo `setup_knitr.R` contém algumas definições globais para
+chuncks, e pode ser alterado conforme necessidades especificas.
 
 Uma alternativa mais viável para misturar chuncks do R em textos longos
 (como o de uma tese) é usar o conceito de [code
@@ -167,17 +178,63 @@ Note que as opções de chunk são válidas normalmente, então fazendo
 
 é uma declaração perfeitamente válida.
 
-Para mais exemplos veja o arquivo
-[`textual/Resultados.Rnw`](textual/Resultados.Rnw) e o script
-[`scripts/resultados.R`](scripts/resultados.R). Note que você pode ter
-mais de um script R sendo carregado em um documento com a função
-`read_chunk()`, e o nome do arquivo não precisa necessariamente ser
-`resultados.R`.
+Para mais exemplos veja o arquivo `textual/Resultados.Rnw` e o script
+`scripts/resultados.R`. Note que você pode ter mais de um script R sendo
+carregado em um documento com a função `read_chunk()`, e o nome do
+arquivo não precisa necessariamente ser `resultados.R`.
 
 **Observação:** usar esta opção de **code externalization** não é
 obrigatória para usar estes arquivos `Rnw`. Você pode fazer sem isso,
-inserindo chunks e códigos diretamente no arquivo fonte `Rnw`. No
+inserindo chunks e códigos diretamente no arquivo fonte `Rnw**. No
 entanto, isso torna sua tese mais portável e reproduzível.
+
+## Tese no formato de capítulos
+
+**Atenção:** leia antes as instruções de uso do template no formato
+tradicional acima.
+
+O formato de tese em capítulos segue basicamente a mesma ideia do
+formato tradicional, mas a grande diferença é que agora cada capítulo
+está contido em um único arquivo. Por exemplo, o arquivo
+`textual/Capitulo1.Rnw` contém todas as seções necessárias (introdução,
+metodologia, etc), incluindo resumo e referências próprias. Para gerar
+as referências em cada capítulo foi utilizado o pacote do LaTeX
+**bibtopic**. Note que cada capítulo se inicia com
+
+```
+\begin{btUnit}
+\chapter{Título do capítulo}
+```
+
+e termina com
+
+```
+\begin{btSect}[referencias/apalikept]{referencias/bibliografia}
+\section*{Referências}
+\addcontentsline{toc}{section}{Referências}
+\btPrintCited
+\end{btSect}
+\end{btUnit}
+```
+
+Essa parte não deve ser modificada, pois é a responsável por incluir as
+referências no final. Por simplificação, o arquivo bibTex
+`referencias/bibliografia.bib` contém as referências de todos os
+capítulos.
+
+No arquivo principal `Tese.Rnw`, a única modificação é que as chamadas
+agora são para cada capítulo, por exemplo
+
+```
+<<child-cap1, child='textual/Capitulo1.Rnw'>>=
+@
+```
+
+ao invés de cada seção da tese, como no formato tradicional.
+
+O uso do pacote do R **knitr**, dos chunks de código no meio do texto ou
+do *code externalization* são exatemente iguais ao já descrito para o
+template de tese no formato tradicional.
 
 ## Alterações feitas para converter os arquivos para o formato knitr:
 
