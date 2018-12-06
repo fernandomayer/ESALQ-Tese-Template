@@ -570,6 +570,9 @@ massa. Quisque eu imperdiet lacus, sit amet iaculis eros. Etiam mi
 elit, dictum vitae ornare et, lacinia vitae mi. Curabitur dignissim
 tortor finibus lectus fringilla hendrerit.
 
+Alguma citação no meio do texto \citet{Mood1974} e entre parênteses
+\citep{Millar2000}.
+
 \begin{btSect}[referencias/apalikept]{referencias/bibliografia}
 \section*{Referências}
 \addcontentsline{toc}{section}{Referências}
