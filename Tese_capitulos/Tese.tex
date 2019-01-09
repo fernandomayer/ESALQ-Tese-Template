@@ -1,6 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Template para redação de Teses/Dissertações da ESALQ/USP
 % Autor: Antonio Augusto Franco Garcia
+% Conversão para capítulos: Fernando de Pol Mayer
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Este arquivo concatena todos os arquivos individuais e o template
@@ -12,16 +13,24 @@
 
 % Preâmbulo: definição da classe e inclusão do template
 % NÃO MUDE NADA AQUI, NEM O TAMANHO DA FONTE
-\documentclass[book,A4paper,10pt,twoside,oldfontcommands]{memoir}
+\documentclass[a4paper,10pt,twoside,oldfontcommands]{memoir}
 \usepackage{./template/Template_Tese}
 
 
 % Inclua aqui a lista dos pacotes do LaTeX que você necessita usar.
 % Por exemplo, para incluir o pacote amsmath, remova o comentário da
-% linha correspondente logo abaixo. Insira os demais pacotes de forma análoga.
+% linha correspondente logo abaixo. Insira os demais pacotes de forma
+% análoga.
+
 % ATENÇÃO: alguns pacotes são incompatíveis entre si, ou se sobrepõem
 % as configurações de outros; use com cuidado
 % amsmath: \usepackage{amsmath}
+
+%% O pacote bibtopic é responsável por fazer as referências em cada
+%% capítulo. Ele deve ser chamado aqui no preâmbulo e também no início e
+%% final de cada capítulo.
+\raggedbottom
+\usepackage{bibtopic}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -34,19 +43,19 @@
 
 % Inclusão do arquivo com informações necessárias para a parte
 % pré-textual.
-% %%%% 
+% %%%%
 % VOCÊ DEVE ABRIR O ARQUIVO TodasInformações.tex E
-% ALTERÁ-LO DA FORMA APROPRIADA PARA O SEU TRABALHO. 
+% ALTERÁ-LO DA FORMA APROPRIADA PARA O SEU TRABALHO.
 % %%%%
 % Lembre-se de  conferir o número de páginas quando tiver a versão final a ser
 % submetida.
-\input{./pre-textual/TodasInformações.tex} 
+\input{./pre-textual/TodasInformações.tex}
 
 
 % Inclusão de arquivos que compõem a parte pré-textual
 
 % Inclusão das Capas
-% NÃO HÁ NADA A SER ALTERADO NO ARQUIVO ABAIXO 
+% NÃO HÁ NADA A SER ALTERADO NO ARQUIVO ABAIXO
 % A capa é produzida automaticamente
 \input{./pre-textual/Capa.tex}
 
@@ -62,10 +71,10 @@
 
 % Para remover partes opcionais indicadas abaixo, basta comentar as
 % respectivas linhas (incluindo o \clearpage). Para editar, abra o
-% arquivo correspondente.  
+% arquivo correspondente.
 
 % Dedicatória (opcional)
-\input{./pre-textual/Dedicatoria.tex}   
+\input{./pre-textual/Dedicatoria.tex}
 \clearpage
 
 % Agradecimentos (opcional)
@@ -96,23 +105,6 @@
 \input{./pre-textual/Abstract.tex}
 \clearpage
 
-% Lista de Figuras (opcional). Feita automaticamente.
-\listoffigures
-\clearpage
-
-% Lista de Tabelas (opcional). Feita automaticamente.
-\listoftables
-\clearpage
-
-% Lista de Abreviaturas e Siglas (opcional). Abra o arquivo para
-% inclusões.   
-\input{./pre-textual/ListaAbreviaturas.tex}
-\clearpage
-
-% Lista de Símbolos (opcional). Abro o arquivo para modificações
-\input{./pre-textual/ListaSimbolos.tex}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Início da Parte Textual. Conteúdo mais importante
 
@@ -127,17 +119,16 @@
 % modificações substanciais. Modifique o conteúdo dos arquivos, insira
 % novos .tex, etc.
 
-
 \input{./textual/Introdução.tex}
 
-\input{./textual/MatMet.tex}
+\input{./textual/Capitulo1.tex}
 
-\input{./textual/Resultados.tex}
+\input{./textual/Capitulo2.tex}
 
-\input{./textual/Discussão.tex}
+\input{./textual/Consideracoes.tex}
 
 
-% Referências. 
+% Referências.
 % O template faz uso do BibTex. Verifique o formato
 % apropriado para o seu caso. Abaixo, é apresentado um exemplo para o
 % formato de citação da revista Genetics. O estilo correspondente está
@@ -148,10 +139,10 @@
 % (também no diretório "referencias"). Use os arquivos apropriados
 % para o seu caso.
 
-\renewcommand\bibname{Referências} %Muda "Referência Bibliográficas" para Referências
-\bibliographystyle{./referencias/genetics} %Localização do arquivo genetics.bst
-\bibliography{./referencias/bibliografia} %Localização do arquivo bibliografia.bib
-\clearpage
+% \renewcommand\bibname{Referências} %Muda "Referência Bibliográficas" para Referências
+% \bibliographystyle{./referencias/genetics} %Localização do arquivo genetics.bst
+% \bibliography{./referencias/bibliografia} %Localização do arquivo bibliografia.bib
+% \clearpage
 
 %%%%%%%%%%%%%%%%%%%%
 % Parte Pós-textual
