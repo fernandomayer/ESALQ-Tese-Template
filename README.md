@@ -1,5 +1,18 @@
 # ESALQ-Tese-Template
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [ESALQ-Tese-Template](#esalq-tese-template)
+    - [Introdução](#introdução)
+    - [Qual template devo usar?](#qual-template-devo-usar)
+    - [Tese no formato tradicional](#tese-no-formato-tradicional)
+    - [Tese no formato de capítulos](#tese-no-formato-de-capítulos)
+    - [Alterações feitas para converter os arquivos para o formato knitr:](#alterações-feitas-para-converter-os-arquivos-para-o-formato-knitr)
+
+<!-- markdown-toc end -->
+
+
 ## Introdução
 
 Este é o template original escrito em LaTeX para a produção de teses da
@@ -7,26 +20,58 @@ ESALQ, escrito originalmente pelo professor Antonio Augusto Franco
 Garcia, e disponibilizado no site da [Biblioteca da
 ESALQ](http://www4.esalq.usp.br/biblioteca/apoio-a-producao-academica).
 
-As alterações feitas aqui são para possibilitar que a tese seja escrita
-usando o formato `Rnw`, do pacote **knitr** para o R. Dessa forma,
-pode-se misturar códigos R ao texto escrito em LaTeX. Para informações
-gerais sobre o **knitr**, veja este [site](https://yihui.name/knitr).
+O template original serve para escrever a tese no formato tradicional.
+Os templates disponibilizados aqui são 3 variações do template original
+da biblioteca, conforme cada um dos diretórios:
 
-Todos os arquivos disponibilizados no formato `tex` foram convertidos
-para o formato `Rnw`, portanto aqui são esses arquivos que devem ser
-editados (mesmo que nenhum código R seja utilizado em algum arquivo).
+1. **Tese_capitulos**: template para escrever a tese em capítulos
+   independentes, cada um com sua própria seção de referências
+   bibliográficas (formato **TeX**).
+2. **Tese_capitulos_knitr**: mesmo tamplate da tese em capítulos, mas
+   permitindo a inclusão de códigos do R no meio do texto através do
+   pacote **knitr** do R (formato **Rnw**).
+3. **Tese_tradicional_knitr**: tese no formato tradicional permitindo a
+   inclusão de códigos do R no meio do texto através do pacote **knitr**
+   do R (formato **Rnw**).
 
-O template com os arquivos em `Rnw` também foi modificado para o formato
-de tese em capítulos. Esse formato também é permitido pela biblioteca,
-e, deve conter uma introdução geral e considerações finais sobre todos
-os capítulos. Dessa forma, cada capítulo deve ser auto-contido, ou seja,
-deve conter seu próprio resumo, introdução, etc, e deve ser independente
-dos outros capítulos. Além disso, as referências bibliográficas devem
-ser colocadas ao final de cada capítulo.
+A tese em capítulos também é permitida pela biblioteca, e, deve conter
+uma introdução geral e considerações finais sobre todos os capítulos.
+Dessa forma, cada capítulo deve ser auto-contido, ou seja, deve conter
+seu próprio resumo, introdução, etc, e deve ser independente dos outros
+capítulos. Além disso, as referências bibliográficas devem ser colocadas
+ao final de cada capítulo.
+
+As alterações feitas aqui também são para possibilitar que a tese seja
+escrita usando o formato `Rnw`, do pacote **knitr** para o R. Dessa
+forma, pode-se misturar códigos R ao texto escrito em LaTeX. Para
+informações gerais sobre o **knitr**, veja este
+[site](https://yihui.name/knitr). Nesse caso, todos os arquivos
+disponibilizados no formato `tex` foram convertidos para o formato
+`Rnw`, portanto aqui são esses arquivos que devem ser editados (mesmo
+que nenhum código R seja utilizado em algum arquivo).
+
+
 
 Mesmo que você opte por usar a tese no formato de capítulos, recomendo
 que leia antes as instruções de uso do template da tese no formato
 tradicional.
+
+## Qual template devo usar?
+
+- Se você for escrever a **tese no formato tradicional** e **sem**
+  códigos do R, então deve usar o template original disponibilizado no
+  site da [biblioteca](http://www4.esalq.usp.br/biblioteca/apoio-a-producao-academica).
+- Se você for ecrever a **tese em capítulos** e **sem** códigos do R,
+  então pode usar o template disponibilizado aqui no diretório
+  [Tese_capitulos](./Tese_capitulos).
+- Se você for escrever a **tese no formato tradicional** e **com**
+  códigos do R, então pode usar o template disponibilizado aqui no
+  diretório [Tese_tradicional_knitr](./Tese_tradicional_knitr).
+- Se você for ecrever a **tese em capítulos** e **com** códigos do R,
+  então pode usar o template disponibilizado aqui no diretório
+  [Tese_capitulos_knitr](./Tese_capitulos_knitr).
+
+---
 
 ## Tese no formato tradicional
 
