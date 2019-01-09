@@ -1,18 +1,17 @@
 # ESALQ-Tese-Template
 
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
-**Table of Contents**
+**Sumário**
 
-- [ESALQ-Tese-Template](#esalq-tese-template)
-    - [Introdução](#introdução)
-    - [Qual template devo usar?](#qual-template-devo-usar)
-    - [Tese no formato tradicional](#tese-no-formato-tradicional)
-        - [Sem códigos do R](#sem-códigos-do-r)
-        - [Com códigos do R](#com-códigos-do-r)
-    - [Tese no formato de capítulos](#tese-no-formato-de-capítulos)
-        - [Sem códigos do R](#sem-códigos-do-r-1)
-        - [Com códigos do R](#com-códigos-do-r-1)
-    - [Alterações feitas para converter os arquivos para o formato knitr](#alterações-feitas-para-converter-os-arquivos-para-o-formato-knitr)
+- [Introdução](#introdução)
+- [Qual template devo usar?](#qual-template-devo-usar)
+- [Tese no formato tradicional](#tese-no-formato-tradicional)
+    - [Sem códigos do R](#sem-códigos-do-r)
+    - [Com códigos do R](#com-códigos-do-r)
+- [Tese no formato de capítulos](#tese-no-formato-de-capítulos)
+    - [Sem códigos do R](#sem-códigos-do-r-1)
+    - [Com códigos do R](#com-códigos-do-r-1)
+- [Alterações feitas para converter os arquivos para o formato knitr](#alterações-feitas-para-converter-os-arquivos-para-o-formato-knitr)
 
 <!-- markdown-toc end -->
 
@@ -335,6 +334,8 @@ agora são para cada capítulo no formato `Rnw`, por exemplo
 O uso do pacote do R **knitr**, dos chunks de código no meio do texto ou
 do *code externalization* são exatamente iguais ao já descrito para o
 template de tese no formato tradicional [acima](#com-códigos-do-r).
+
+---
 
 ## Alterações feitas para converter os arquivos para o formato knitr
 
