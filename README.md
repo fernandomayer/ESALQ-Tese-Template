@@ -78,9 +78,15 @@ Todas estas instruções são válidas para as variações disponibilizadas
 aqui. Portanto, esse é o documento inicial que todos devem ler antes de
 começar.
 
-## Tese no formato tradicional
+<aside class="warning">
+Você deve ler primeiro as instruções de uso do template original da tese
+no formato tradicional, disponibilizado [no site da
+biblioteca](http://www.esalq.usp.br/biblioteca/tutorial-template-latex.pdf).
+</aside>
 
 ---
+
+## Tese no formato tradicional
 
 ### Sem códigos do R
 
@@ -248,9 +254,9 @@ obrigatória para usar estes arquivos `Rnw`. Você pode fazer sem isso,
 inserindo chunks e códigos diretamente no arquivo fonte `Rnw**. No
 entanto, isso torna sua tese mais portável e reproduzível.
 
-## Tese no formato de capítulos
-
 ---
+
+## Tese no formato de capítulos
 
 ### Sem códigos do R
 
@@ -332,7 +338,7 @@ O uso do pacote do R **knitr**, dos chunks de código no meio do texto ou
 do *code externalization* são exatamente iguais ao já descrito para o
 template de tese no formato tradicional [acima](#com-códigos-do-r).
 
-## Alterações feitas para converter os arquivos para o formato knitr:
+## Alterações feitas para converter os arquivos para o formato knitr
 
 (Só leia isso se você tiver interesse).
 
