@@ -7,11 +7,14 @@
     - [Introdução](#introdução)
     - [Qual template devo usar?](#qual-template-devo-usar)
     - [Tese no formato tradicional](#tese-no-formato-tradicional)
+        - [Sem códigos do R](#sem-códigos-do-r)
+        - [Com códigos do R](#com-códigos-do-r)
     - [Tese no formato de capítulos](#tese-no-formato-de-capítulos)
+        - [Sem códigos do R](#sem-códigos-do-r-1)
+        - [Com códigos do R](#com-códigos-do-r-1)
     - [Alterações feitas para converter os arquivos para o formato knitr:](#alterações-feitas-para-converter-os-arquivos-para-o-formato-knitr)
 
 <!-- markdown-toc end -->
-
 
 ## Introdução
 
@@ -50,36 +53,48 @@ disponibilizados no formato `tex` foram convertidos para o formato
 `Rnw`, portanto aqui são esses arquivos que devem ser editados (mesmo
 que nenhum código R seja utilizado em algum arquivo).
 
-
-
-Mesmo que você opte por usar a tese no formato de capítulos, recomendo
-que leia antes as instruções de uso do template da tese no formato
-tradicional.
-
 ## Qual template devo usar?
 
-- Se você for escrever a **tese no formato tradicional** e **sem**
+- Se você for escrever a **tese no formato tradicional** e **SEM**
   códigos do R, então deve usar o template original disponibilizado no
   site da [biblioteca](http://www4.esalq.usp.br/biblioteca/apoio-a-producao-academica).
-- Se você for ecrever a **tese em capítulos** e **sem** códigos do R,
-  então pode usar o template disponibilizado aqui no diretório
-  [Tese_capitulos](./Tese_capitulos).
-- Se você for escrever a **tese no formato tradicional** e **com**
+- Se você for escrever a **tese no formato tradicional** e **COM**
   códigos do R, então pode usar o template disponibilizado aqui no
   diretório [Tese_tradicional_knitr](./Tese_tradicional_knitr).
-- Se você for ecrever a **tese em capítulos** e **com** códigos do R,
+- Se você for ecrever a **tese em capítulos** e **SEM** códigos do R,
+  então pode usar o template disponibilizado aqui no diretório
+  [Tese_capitulos](./Tese_capitulos).
+- Se você for ecrever a **tese em capítulos** e **COM** códigos do R,
   então pode usar o template disponibilizado aqui no diretório
   [Tese_capitulos_knitr](./Tese_capitulos_knitr).
 
----
+A seguir estão as instruções para usar cada um dos formatos.
+
+Mesmo que você opte por usar a tese no formato de capítulos, ou usando o
+**knitr**, recomendo que leia antes as instruções de uso do template da
+tese no formato tradicional, disponibilizado
+[aqui](http://www.esalq.usp.br/biblioteca/tutorial-template-latex.pdf).
+Todas estas instruções são válidas para as variações disponibilizadas
+aqui. Portanto, esse é o documento inicial que todos devem ler antes de
+começar.
 
 ## Tese no formato tradicional
 
+---
+
+### Sem códigos do R
+
+Nesse caso, o template a ser utilizado é o original disponibilizado no
+site da [biblioteca](http://www4.esalq.usp.br/biblioteca/apoio-a-producao-academica).
+
 As instruções para a versão original em LaTeX estão
-[aqui](http://www.esalq.usp.br/biblioteca/tutorial-template-latex.pdf),
-e todas elas são válidas para o formato `Rnw` também. Portanto, esse é o
-documento inicial que todos devem ler antes de começar. Abaixo vou
-mencionar apenas as diferenças principais.
+[aqui](http://www.esalq.usp.br/biblioteca/tutorial-template-latex.pdf).
+
+
+### Com códigos do R
+
+O template a ser utilizado nesse caso está no diretório
+[Tese_tradicional_knitr](./Tese_tradicional_knitr).
 
 Antes de fazer qualquer modificação nos arquivos, a primeira coisa a
 fazer é compilar este template para ver se está funcionando corretamente
@@ -125,7 +140,7 @@ no arquivo `Tese.tex` original foram modificados para
 
 no arquivo `Tese.Rnw`. Assim, basta ir seguindo a ordem e editando os
 arquivos `Rnw` que são chamados na sequência. Mesmo que esses arquivos
-não tenha nenhum código R, não altere o formato do arquivo para `tex`.
+não possuam nenhum código R, não altere o formato do arquivo para `tex`.
 Após alguma edição, basta compilar **apenas** o arquivo `Tese.Rnw`
 conforme mencionado acima (não esqueça de rodar o `knit()` antes).
 
@@ -235,13 +250,20 @@ entanto, isso torna sua tese mais portável e reproduzível.
 
 ## Tese no formato de capítulos
 
+---
+
+### Sem códigos do R
+
 **Atenção:** leia antes as instruções de uso do template no formato
-tradicional acima.
+tradicional [acima](#sem-códigos-do-r).
+
+O template a ser utilizado nesse caso está no diretório
+[Tese_capitulos](./Tese_capitulos).
 
 O formato de tese em capítulos segue basicamente a mesma ideia do
 formato tradicional, mas a grande diferença é que agora cada capítulo
 está contido em um único arquivo. Por exemplo, o arquivo
-`textual/Capitulo1.Rnw` contém todas as seções necessárias (introdução,
+`textual/Capitulo1.tex` contém todas as seções necessárias (introdução,
 metodologia, etc), incluindo resumo e referências próprias. Para gerar
 as referências em cada capítulo foi utilizado o pacote do LaTeX
 **bibtopic**. Note que cada capítulo se inicia com
@@ -267,19 +289,48 @@ referências no final. Por simplificação, o arquivo bibTex
 `referencias/bibliografia.bib` contém as referências de todos os
 capítulos.
 
-No arquivo principal `Tese.Rnw`, a única modificação é que as chamadas
-agora são para cada capítulo, por exemplo
+Uma diferença importante nesse caso é na hora de compilar os arquivos. O
+pacote **bibtopic** gera um arquivo auxiliar (`.aux`) para cada capítulo
+que possua referências bibliográficas próprias. Por exemplo, no template
+disponibilizado existem dois capítulos e mais a introdução com
+referências próprias. Com isso, o pacote gera os arquivos `Tese1.aux`,
+`Tese2.aux`, e `Tese3.aux`, cada um é responsável por processar as
+referências de cada capítulo. Por isso, agora é necessário rodar o
+`bibtex` nesses 3 arquivos separadamente. A sequência de execução seria
+então:
+
+```{sh}
+xelatex Tese.tex
+bibtex Tese1.aux
+bibtex Tese2.aux
+bibtex Tese3.aux
+xelatex Tese.tex
+xelatex Tese.tex
+xelatex Tese.tex
+```
+
+Se mais capítulos forem acrescentados, então será criado os arquivos na
+sequência: `Tese4.aux`, `Tese5.aux`, etc, que também devem ser
+compilados com `bibtex`.
+
+
+### Com códigos do R
+
+O template a ser utilizado nesse caso está no diretório
+[Tese_capitulos_knitr](./Tese_capitulos_knitr).
+
+As mesmas instruções da seção anterior são válidas aqui. A diferença é
+que no arquivo principal `Tese.Rnw`, a única modificação é que as chamadas
+agora são para cada capítulo no formato `Rnw`, por exemplo
 
 ```
 <<child-cap1, child='textual/Capitulo1.Rnw'>>=
 @
 ```
 
-ao invés de cada seção da tese, como no formato tradicional.
-
 O uso do pacote do R **knitr**, dos chunks de código no meio do texto ou
 do *code externalization* são exatamente iguais ao já descrito para o
-template de tese no formato tradicional.
+template de tese no formato tradicional [acima](#com-códigos-do-r).
 
 ## Alterações feitas para converter os arquivos para o formato knitr:
 
