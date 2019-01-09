@@ -1,0 +1,167 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template para redação de Teses/Dissertações da ESALQ/USP
+% Autor: Antonio Augusto Franco Garcia
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Este arquivo concatena todos os arquivos individuais e o template
+
+% ESTE É O ARQUIVO QUE DEVE SER COMPILADO!!!!!
+
+% AS CONFIGURAÇÕES NESTE ARQUIVO NÃO DEVEM SER ALTERADAS
+% INADVERTIDAMENTE. MUDE APENAS O QUE FOR EXPLICITAMENTE INDICADO.
+
+% Preâmbulo: definição da classe e inclusão do template
+% NÃO MUDE NADA AQUI, NEM O TAMANHO DA FONTE
+\documentclass[book,A4paper,10pt,twoside,oldfontcommands]{memoir}
+\usepackage{./template/Template_Tese}
+
+
+% Inclua aqui a lista dos pacotes do LaTeX que você necessita usar.
+% Por exemplo, para incluir o pacote amsmath, remova o comentário da
+% linha correspondente logo abaixo. Insira os demais pacotes de forma análoga.
+% ATENÇÃO: alguns pacotes são incompatíveis entre si, ou se sobrepõem
+% as configurações de outros; use com cuidado
+% amsmath: \usepackage{amsmath}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Início do documento - Parte Pré-textual
+\begin{document}
+
+% Macro da classe memoir que remove os cabeçalhos (comuns em
+% documentos da classe "book")
+\pagestyle{fnsizeheadings}
+
+% Inclusão do arquivo com informações necessárias para a parte
+% pré-textual.
+% %%%% 
+% VOCÊ DEVE ABRIR O ARQUIVO TodasInformações.tex E
+% ALTERÁ-LO DA FORMA APROPRIADA PARA O SEU TRABALHO. 
+% %%%%
+% Lembre-se de  conferir o número de páginas quando tiver a versão final a ser
+% submetida.
+\input{./pre-textual/TodasInformações.tex} 
+
+
+% Inclusão de arquivos que compõem a parte pré-textual
+
+% Inclusão das Capas
+% NÃO HÁ NADA A SER ALTERADO NO ARQUIVO ABAIXO 
+% A capa é produzida automaticamente
+\input{./pre-textual/Capa.tex}
+
+% Ficha catalográfica
+% NÃO HÁ NADA A SER ALTERADO NESTE ARQUIVO.
+% A ficha é produzida automaticamente
+\input{./pre-textual/Ficha.tex}
+
+% Duas configurações importantes que não devem ser removidas:
+% Paginação constante a partir da Ficha Catalográfica, fontes roman
+\openany
+\rmfamily
+
+% Para remover partes opcionais indicadas abaixo, basta comentar as
+% respectivas linhas (incluindo o \clearpage). Para editar, abra o
+% arquivo correspondente.  
+
+% Dedicatória (opcional)
+\input{./pre-textual/Dedicatoria.tex}   
+\clearpage
+
+% Agradecimentos (opcional)
+\input{./pre-textual/Agradecimentos.tex}
+\clearpage
+
+% Biografia (opcional)
+\input{./pre-textual/Biografia.tex}
+\clearpage
+
+% Epígrafe (opcional)
+\input{./pre-textual/Epigrafe.tex}
+\clearpage
+
+% Sumário (é feito automaticamente; não há nada a ser alterado!)
+\setupshorttoc
+\setupparasubsecs
+\setupmaintoc
+\tableofcontents*
+\setlength{\unitlength}{1pt}
+\clearpage
+
+% Resumo. Abra o arquivo para alterações.
+\input{./pre-textual/Resumo.tex}
+\clearpage
+
+% Abstract. Abra o arquivo para alterações.
+\input{./pre-textual/Abstract.tex}
+\clearpage
+
+% Lista de Figuras (opcional). Feita automaticamente.
+\listoffigures
+\clearpage
+
+% Lista de Tabelas (opcional). Feita automaticamente.
+\listoftables
+\clearpage
+
+% Lista de Abreviaturas e Siglas (opcional). Abra o arquivo para
+% inclusões.   
+\input{./pre-textual/ListaAbreviaturas.tex}
+\clearpage
+
+% Lista de Símbolos (opcional). Abro o arquivo para modificações
+\input{./pre-textual/ListaSimbolos.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Início da Parte Textual. Conteúdo mais importante
+
+% A opção abaixo, que não deve ser removida, inicia cada capítulo
+% em página ímpar
+\openright
+
+% Os items abaixo dependem do tipo de trabalho: capítulos, texto
+% convencional, etc, de acordo com o Regulamento. Abra os arquivos
+% abaixo (estão no diretório chamado "textual") para ver como os
+% modelos foram criados. Basicamente, é uma edição usando LaTeX, sem
+% modificações substanciais. Modifique o conteúdo dos arquivos, insira
+% novos .tex, etc.
+
+
+\input{./textual/Introdução.tex}
+
+\input{./textual/MatMet.tex}
+
+\input{./textual/Resultados.tex}
+
+\input{./textual/Discussão.tex}
+
+
+% Referências. 
+% O template faz uso do BibTex. Verifique o formato
+% apropriado para o seu caso. Abaixo, é apresentado um exemplo para o
+% formato de citação da revista Genetics. O estilo correspondente está
+% localizado no arquivo genetics.bst (fornecido pela revista), que
+% está no diretório "referencias". Use o .bst adequado para seu
+% trabalho, mudando o estilo abaixo, como indicado. Já a base de dados
+% de referências, no formato BibTeX, está no arquivo bibliografia.bib
+% (também no diretório "referencias"). Use os arquivos apropriados
+% para o seu caso.
+
+\renewcommand\bibname{Referências} %Muda "Referência Bibliográficas" para Referências
+\bibliographystyle{./referencias/genetics} %Localização do arquivo genetics.bst
+\bibliography{./referencias/bibliografia} %Localização do arquivo bibliografia.bib
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%%
+% Parte Pós-textual
+% Apêndices e Anexos
+
+% Apêndices (opcionais). Edite da forma desejada.
+\input{./pos-textual/Apêndices.tex}
+
+% Anexos (opcionais). Edite da forma desejada.
+\input{./pos-textual/Anexos.tex}
+
+
+\end{document}
