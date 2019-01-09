@@ -12,7 +12,7 @@
     - [Tese no formato de capítulos](#tese-no-formato-de-capítulos)
         - [Sem códigos do R](#sem-códigos-do-r-1)
         - [Com códigos do R](#com-códigos-do-r-1)
-    - [Alterações feitas para converter os arquivos para o formato knitr:](#alterações-feitas-para-converter-os-arquivos-para-o-formato-knitr)
+    - [Alterações feitas para converter os arquivos para o formato knitr](#alterações-feitas-para-converter-os-arquivos-para-o-formato-knitr)
 
 <!-- markdown-toc end -->
 
@@ -78,11 +78,9 @@ Todas estas instruções são válidas para as variações disponibilizadas
 aqui. Portanto, esse é o documento inicial que todos devem ler antes de
 começar.
 
-<aside class="warning">
-Você deve ler primeiro as instruções de uso do template original da tese
-no formato tradicional, disponibilizado [no site da
-biblioteca](http://www.esalq.usp.br/biblioteca/tutorial-template-latex.pdf).
-</aside>
+> **ATENÇÃO:** Você deve ler primeiro as instruções de uso do template
+> original da tese no formato tradicional, disponibilizado [no site da
+> biblioteca](http://www.esalq.usp.br/biblioteca/tutorial-template-latex.pdf).
 
 ---
 
