@@ -263,6 +263,16 @@ tradicional [acima](#sem-códigos-do-r).
 O template a ser utilizado nesse caso está no diretório
 [Tese_capitulos](./Tese_capitulos).
 
+> O template da tese em capítulos também pode ser encontrado no
+> [Overleaf](https://www.overleaf.com). O Overleaf é um editor *online*
+> de LaTeX, portanto independente de sistema operacional. O template da
+> tese em capítulos pode ser encontrada na [galeria do
+> Overleaf](https://www.overleaf.com/latex/templates/esalq-tese-em-capitulos/rnpjnsggtyfr).
+> Abrindo esta página, basta clicar em "Open as template" que o template
+> completo será salvo na sua conta pessoal (é necessário ter uma conta
+> no Overleaf ou criar uma antes). Com isso, toda a edição da tese em
+> capítulos pode ser feita direto por este editor *online*.
+
 O formato de tese em capítulos segue basicamente a mesma ideia do
 formato tradicional, mas a grande diferença é que agora cada capítulo
 está contido em um único arquivo. Por exemplo, o arquivo
