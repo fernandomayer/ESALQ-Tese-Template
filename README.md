@@ -3,15 +3,17 @@
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Sumário**
 
-- [Introdução](#introdução)
-- [Qual template devo usar?](#qual-template-devo-usar)
-- [Tese no formato tradicional](#tese-no-formato-tradicional)
-    - [Sem códigos do R](#sem-códigos-do-r)
-    - [Com códigos do R](#com-códigos-do-r)
-- [Tese no formato de capítulos](#tese-no-formato-de-capítulos)
-    - [Sem códigos do R](#sem-códigos-do-r-1)
-    - [Com códigos do R](#com-códigos-do-r-1)
-- [Alterações feitas para converter os arquivos para o formato knitr](#alterações-feitas-para-converter-os-arquivos-para-o-formato-knitr)
+- [ESALQ-Tese-Template](#esalq-tese-template)
+    - [Introdução](#introdução)
+    - [Qual template devo usar?](#qual-template-devo-usar)
+    - [Tese no formato tradicional](#tese-no-formato-tradicional)
+        - [Sem códigos do R](#sem-códigos-do-r)
+        - [Com códigos do R](#com-códigos-do-r)
+    - [Tese no formato de capítulos](#tese-no-formato-de-capítulos)
+        - [Sem códigos do R](#sem-códigos-do-r-1)
+        - [Com códigos do R](#com-códigos-do-r-1)
+    - [Overleaf](#overleaf)
+    - [Alterações feitas para converter os arquivos para o formato knitr](#alterações-feitas-para-converter-os-arquivos-para-o-formato-knitr)
 
 <!-- markdown-toc end -->
 
@@ -80,6 +82,11 @@ começar.
 > **ATENÇÃO:** Você deve ler primeiro as instruções de uso do template
 > original da tese no formato tradicional, disponibilizado [no site da
 > biblioteca](http://www.esalq.usp.br/biblioteca/tutorial-template-latex.pdf).
+
+> **Observação:** Se você for escrever a tese no formato tradicional ou
+> em capítulos, mas **sem usar o knitr**, recomendamos que use os
+> templates disponíveis no Overleaf, e faça a edição da tese por lá.
+> Para mais informações veja a seção (#overleaf) abaixo.
 
 ---
 
@@ -263,16 +270,6 @@ tradicional [acima](#sem-códigos-do-r).
 O template a ser utilizado nesse caso está no diretório
 [Tese_capitulos](./Tese_capitulos).
 
-> O template da tese em capítulos também pode ser encontrado no
-> [Overleaf](https://www.overleaf.com). O Overleaf é um editor *online*
-> de LaTeX, portanto independente de sistema operacional. O template da
-> tese em capítulos pode ser encontrada na [galeria do
-> Overleaf](https://www.overleaf.com/latex/templates/esalq-tese-em-capitulos/rnpjnsggtyfr).
-> Abrindo esta página, basta clicar em "Open as template" que o template
-> completo será salvo na sua conta pessoal (é necessário ter uma conta
-> no Overleaf ou criar uma antes). Com isso, toda a edição da tese em
-> capítulos pode ser feita direto por este editor *online*.
-
 O formato de tese em capítulos segue basicamente a mesma ideia do
 formato tradicional, mas a grande diferença é que agora cada capítulo
 está contido em um único arquivo. Por exemplo, o arquivo
@@ -344,6 +341,32 @@ agora são para cada capítulo no formato `Rnw`, por exemplo
 O uso do pacote do R **knitr**, dos chunks de código no meio do texto ou
 do *code externalization* são exatamente iguais ao já descrito para o
 template de tese no formato tradicional [acima](#com-códigos-do-r).
+
+## Overleaf
+
+Os templates da tese no formato tradicional e em capítulos também podem
+ser encontrados no [Overleaf](https://www.overleaf.com). O Overleaf é um
+editor *online* de LaTeX, portanto independente de sistema operacional.
+
+Os templates estão disponíveis na [galeria do
+Overleaf](https://www.overleaf.com/gallery) nos seguintes formatos:
+
+- [ESALQ
+  Tese](https://www.overleaf.com/latex/templates/esalq-tese/zktbcrxmqyrp):
+  template de tese no formato tradicional.
+- [ESALQ Tese em
+  capitulos](https://www.overleaf.com/latex/templates/esalq-tese-em-capitulos/rnpjnsggtyfr):
+  template de tese no formato de capítulos.
+
+Abrindo as páginas, basta clicar em "Open as Template" que o template
+completo será salvo na sua conta pessoal (é necessário ter uma conta
+no Overleaf ou criar uma antes). Com isso, toda a edição da tese em
+capítulos pode ser feita direto por este editor *online*.
+
+No Overleaf não é possível usar o **knitr**, por isso os templates são
+apenas para os casos onde o LaTeX é utilizado sem esse recurso. Se você
+for usar o **knitr**, necessariamente terá que baixar os templates
+apropriados e editá-los em seu computador.
 
 ---
 
