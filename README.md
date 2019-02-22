@@ -86,7 +86,7 @@ começar.
 > **Observação:** Se você for escrever a tese no formato tradicional ou
 > em capítulos, mas **sem usar o knitr**, recomendamos que use os
 > templates disponíveis no Overleaf, e faça a edição da tese por lá.
-> Para mais informações veja a seção (#overleaf) abaixo.
+> Para mais informações veja a seção [Overleaf](#overleaf) abaixo.
 
 ---
 
